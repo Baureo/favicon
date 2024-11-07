@@ -218,7 +218,7 @@ class Ico
         $color = imagecolorat($im, $x, $y);
 
         $alpha = ( $color & 0x7F000000 ) >> 24;
-        $alpha = ( 1 - ( $alpha / 127 ) ) * 255;
+        $alpha = round(( 1 - ( $alpha / 127 ) ) * 255);
 
         $color &= 0xFFFFFF;
         $color |= 0xFF000000 & ( $alpha << 24 );
